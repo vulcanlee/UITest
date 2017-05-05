@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFUITest.Views.LoginPage">
+
+    <Grid>
+        <StackLayout
+        Orientation="Vertical"
+        HorizontalOptions="Fill" VerticalOptions="Center"
+        Margin="50,0"
+        >
+            <Label
+            Text="帳號"/>
+            <Entry
+            Placeholder="請輸入登入帳號"
+            Text="{Binding Account}"/>
+            <Label
+            Text="密碼"/>
+            <Entry
+            Placeholder="請輸入登入密碼"
+            Text="{Binding Password}"/>
+            <Button
+            Margin="20,40,20,0"
+            Text="登入"
+            Command="{Binding 登入Command}"/>
+        </StackLayout>
+
+        <Grid
+            IsVisible="{Binding ShowMask}">
+            <BoxView
+                Color="Black"
+                Opacity="0.7"
+                />
+            <Label
+                HorizontalOptions="Center" VerticalOptions="Center"
+                Text="請稍後，正在登入中"
+                FontSize="Large"
+                TextColor="White"/>
+        </Grid>
+    </Grid>
+</ContentPage>

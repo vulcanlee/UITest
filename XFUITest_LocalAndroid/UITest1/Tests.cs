@@ -33,6 +33,12 @@ namespace UITest1
         }
 
         [Test]
+        public void UITestREPL()
+        {
+            app.Repl();
+        }
+
+        [Test]
         public void LoginTest()
         {
             app.Screenshot("登入頁面");
